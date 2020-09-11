@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add AccessDetails</title>
+</head>
+<body>
+    <h1>Fill the form to add the access details to the table</h1>
+    <form method="POST">
+        
+        {% csrf_token %}
+        {% if webpages %}
+        <label for="webpage">Webpage:</label>
+        <select name="webpage" id="webpage">
+            {% for webpage in webpages %}
+            <option value="{{webpage}}">{{ webpage.name }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        <label for="datetime">Accessdetails:</label>
+        <input type="datetime-local" name="datetime" id="datetime">
+        <input type="submit" value="Add Access">
+
+    </form>
+    </body>
+</html>

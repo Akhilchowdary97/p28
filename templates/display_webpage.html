@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpages</title>
+</head>
+<body>
+    <h1>Webpages Are :</h1>
+    <table border="7pt">
+    <tr>
+    <th>Webpage_Id</th>
+    <th>Webpage_Topic</th>
+    <th>Webpage_Name</th>
+    <th>Webpage_URL</th>
+    </tr>
+    {% if webpages %}
+    {% for webpage in webpages %}
+    <tr>
+        <td>{{webpage.id}}</td>
+        <td><a href="{% url 'display_topic' id=webpage.topic.id %}">{{webpage.topic.topic_name}}</a></td>
+        <td><a href="{% url 'display_webpage' wid=webpage.id %}">{{webpage.name}}</a></td>
+        <td><a href="{{webpage.url}}">{{webpage.url}}</a></td>
+    </tr>
+    {% endfor %}
+    {% endif %}    
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Topic</title>
+</head>
+<body>
+    <h1>Fill The Form To Add Topic To The Table</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="topic" id="topic">
+        <input type="submit" value="Add Topic">
+    </form>
+</body>
+</html>
